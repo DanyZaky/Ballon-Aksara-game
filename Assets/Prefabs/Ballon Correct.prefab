@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5781959412161990838}
   - component: {fileID: 799733099030755590}
   - component: {fileID: 1613559779721175325}
-  - component: {fileID: 1211552232677210844}
+  - component: {fileID: 2011868361123616656}
+  - component: {fileID: 7625136018820343120}
   m_Layer: 0
   m_Name: Ballon Correct
   m_TagString: Untagged
@@ -121,8 +122,29 @@ MonoBehaviour:
   - {fileID: -954030053, guid: d41b4c3c2c3eda84b99b795356a6713b, type: 3}
   - {fileID: -847234510, guid: d41b4c3c2c3eda84b99b795356a6713b, type: 3}
   aksara: {fileID: 6201530897660956344}
---- !u!61 &1211552232677210844
-BoxCollider2D:
+--- !u!50 &2011868361123616656
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618170326566936713}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &7625136018820343120
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,18 +157,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.17, y: 4.17}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.17, y: 4.17}
-  m_EdgeRadius: 0
+  m_Radius: 2.085
 --- !u!1 &6865046420364395519
 GameObject:
   m_ObjectHideFlags: 0

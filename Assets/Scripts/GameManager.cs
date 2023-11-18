@@ -17,11 +17,11 @@ public class GameManager : MonoBehaviour
     public float totalTime;
     public TextMeshProUGUI timerText, pointText;
     public int currentPoin;
-    public Sprite[] sprites;
+    public string[] aksaraText;
 
     public int currentAksara;
     public int pointCount;
-    public Image aksaraSource;
+    public TextMeshProUGUI aksaraSource;
 
     private float currentTime;
 
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         currentTime = totalTime;
         currentPoin = 0;
         currentAksara = Random.Range(1, 21);
-        aksaraSource.sprite = sprites[currentAksara];
+        aksaraSource.text = aksaraText[currentAksara];
         pointCount = 5;
     }
 
