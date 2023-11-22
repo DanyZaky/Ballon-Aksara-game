@@ -16,5 +16,6 @@ public class BallonController : MonoBehaviour
         Destroy(gameObject);
         GameManager.Instance.currentPoin += 10;
         GameManager.Instance.pointCount -= 1;
+        GameManager.Instance.Benar.Play();
     }
 }
