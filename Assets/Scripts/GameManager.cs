@@ -127,4 +127,9 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         Time.timeScale = 1;
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
