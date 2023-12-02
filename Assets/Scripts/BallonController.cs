@@ -13,9 +13,12 @@ public class BallonController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        GameManager.Instance.currentPoin += 10;
-        GameManager.Instance.pointCount -= 1;
-        GameManager.Instance.Benar.Play();
+        if(!GameManager.Instance.isGameOver)
+        {
+            Destroy(gameObject);
+            GameManager.Instance.currentPoin += 10;
+            GameManager.Instance.pointCount -= 1;
+            GameManager.Instance.Benar.Play();
+        }
     }
 }

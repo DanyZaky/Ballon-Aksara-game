@@ -24,8 +24,11 @@ public class BallonUncorrectController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        GameManager.Instance.currentHealth -= 1;
-        GameManager.Instance.Salah.Play();
+        if(!GameManager.Instance.isGameOver)
+        {
+            Destroy(gameObject);
+            GameManager.Instance.currentHealth -= 1;
+            GameManager.Instance.Salah.Play();
+        }
     }
 }

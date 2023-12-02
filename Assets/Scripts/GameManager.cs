@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    public bool isGameOver;
+
     public float totalTime;
     public TextMeshProUGUI timerText, pointText;
     public int currentPoin;
@@ -43,6 +45,8 @@ public class GameManager : MonoBehaviour
     public AudioSource Salah;
     public AudioSource GameOver;
 
+    
+
     void Start()
     {
         currentTime = PlayerPrefs.GetFloat("Time", totalTime);
@@ -63,6 +67,7 @@ public class GameManager : MonoBehaviour
         currentGame = PlayerPrefs.GetInt("Game", 1);
 
         isPlay = false;
+        isGameOver = false;
     }
 
     void Update()
@@ -92,6 +97,8 @@ public class GameManager : MonoBehaviour
                 GameOver.Play();
                 isPlay = true;
             }
+
+            isGameOver = true;
         }
     }
 
@@ -102,6 +109,17 @@ public class GameManager : MonoBehaviour
         if (currentTime < 0)
         {
             currentTime = 0;
+
+            gameoverPanel.SetActive(true);
+            Time.timeScale = 0;
+
+            if (!isPlay)
+            {
+                GameOver.Play();
+                isPlay = true;
+            }
+
+            isGameOver = true;
         }
 
         string minutes = Mathf.Floor(currentTime / 60).ToString("00");
