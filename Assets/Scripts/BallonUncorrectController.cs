@@ -8,10 +8,11 @@ public class BallonUncorrectController : MonoBehaviour
     public SpriteRenderer aksara;
     void Start()
     {
-        int randomNumber = GenerateRandomNumber();
-        aksara.sprite = sprites[randomNumber];
+        int randomNumber = GenerateRandomNumber(); //melakukan generate aksara
+        aksara.sprite = sprites[randomNumber]; //attach sprite/gambar aksara di tiap index
     }
 
+    //method untuk generate random aksara pada nilai salah
     int GenerateRandomNumber()
     {
         int result = Random.Range(1, 20);
@@ -22,6 +23,8 @@ public class BallonUncorrectController : MonoBehaviour
         return result;
     }
 
+
+    //method untuk klik aksara yang salah
     private void OnMouseDown()
     {
         if(!GameManager.Instance.isGameOver)

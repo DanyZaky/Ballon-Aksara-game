@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         if(PlayerPrefs.GetInt("Game") >= 3)
         {
             PlayerPrefs.SetInt("Game", 1);
-            if (currentHealth > 5)
+            if (currentHealth > 5) // kondisi untuk setel max health ke 5, jadi tidak lebih dari 5
             {
                 currentHealth += 1;
             }
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         pointText.text = "Poin : " + currentPoin.ToString();
         healthText.text = "Nyawa : " + currentHealth.ToString();
 
-        if(pointCount <= 0)
+        if(pointCount <= 0) //kondisi jika menang di tiap level maka akan ke level selanjutnya
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             PlayerPrefs.SetInt("Point", currentPoin);
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Game", currentGame);
         }
 
-        if(currentHealth <= 0)
+        if(currentHealth <= 0) // kondisi jika nyawa habis
         {
             gameoverPanel.SetActive(true);
             Time.timeScale = 0;
@@ -105,9 +105,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //method untuk pengurangan waktu
     private void TimerUpdate()
     {
-        currentTime -= Time.deltaTime;
+        currentTime -= Time.deltaTime; // fungsi waktu berkurang
 
         if (currentTime < 0)
         {
@@ -130,18 +131,22 @@ public class GameManager : MonoBehaviour
         timerText.text = minutes + ":" + seconds;
     }
 
+
+    //method untuk pause game
     public void PauseButton()
     {
         Time.timeScale = 0;
         pausePanel.SetActive(true);
     }
 
+    //method untuk resume game
     public void ResumeButton()
     {
         Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
 
+    //method untuk restart game
     public void RestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -149,6 +154,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    //method jika klik back to menu/ kembali ke mainmenu scene
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);

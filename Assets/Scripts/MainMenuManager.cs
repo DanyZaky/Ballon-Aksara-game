@@ -7,9 +7,10 @@ public class MainMenuManager : MonoBehaviour
 {
     private void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1; //inisiasi pada scene main menu agar waktu berjalan normal
     }
 
+    //method untuk klik PLay Game
     public void PlayGame()
     {
         SceneManager.LoadScene(1);

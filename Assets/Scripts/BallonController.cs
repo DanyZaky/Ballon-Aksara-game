@@ -8,9 +8,10 @@ public class BallonController : MonoBehaviour
     public SpriteRenderer aksara;
     void Start()
     {
-        aksara.sprite = sprites[GameManager.Instance.currentAksara];
+        aksara.sprite = sprites[GameManager.Instance.currentAksara]; // attach sprite/image pada aksara yang benar
     }
 
+    //method klik aksara jawaban benar
     private void OnMouseDown()
     {
         if(!GameManager.Instance.isGameOver)
