@@ -62,7 +62,10 @@ public class GameManager : MonoBehaviour
         if(PlayerPrefs.GetInt("Game") >= 3)
         {
             PlayerPrefs.SetInt("Game", 1);
-            currentHealth += 1;
+            if (currentHealth > 5)
+            {
+                currentHealth += 1;
+            }
         }
         currentGame = PlayerPrefs.GetInt("Game", 1);
 
